@@ -1,10 +1,11 @@
-package cu.iptriana.mydog
+package cu.iptriana.mydog.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import cu.iptriana.mydog.R
 import cu.iptriana.mydog.databinding.ItemDogBinding
 
 class DogAdapter(private var images: List<String> = listOf()) : RecyclerView.Adapter<DogAdapter.ViewHolder>() {

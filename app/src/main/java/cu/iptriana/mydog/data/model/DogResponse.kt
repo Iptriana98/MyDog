@@ -1,4 +1,4 @@
-package cu.iptriana.mydog
+package cu.iptriana.mydog.data.model
 
 import com.google.gson.annotations.SerializedName
 

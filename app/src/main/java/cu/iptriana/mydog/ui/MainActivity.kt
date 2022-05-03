@@ -1,11 +1,13 @@
-package cu.iptriana.mydog
+package cu.iptriana.mydog.ui
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
+import cu.iptriana.mydog.data.api.APIService
 import cu.iptriana.mydog.databinding.ActivityMainBinding
+import cu.iptriana.mydog.ui.adapters.DogAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -14,10 +16,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var _binding: ActivityMainBinding
+    private val binding get() = _binding
+//    private val viewModel: MainViewModel by viewmodels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initRecycler()
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
